@@ -53,6 +53,7 @@ This project is a simple implementation of a keylogger integrated with a login f
     GMAILFROM=your-from-email@gmail.com
     PASSWORD=your-email-password
     GMAILTO=your-to-email@gmail.com
+    PORT=3000
     ```
 
 5. **Start the server:**
