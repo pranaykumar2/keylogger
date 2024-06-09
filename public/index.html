@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Key Logger | Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="image.png" alt="ACKB Avatar" class="avatar">
+            <h1>Admin Panel</h1>
+            <p></p>
+            <form id="loginForm" method="post" action="/login">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Usernname</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <div class="footer">
+                <p>Not your computer? Use Guest mode to sign in privately. <a href="#">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
