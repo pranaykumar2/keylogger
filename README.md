@@ -167,10 +167,10 @@ ${keysPressedText}`
 
 ## 🔐 Security Considerations
 
-✅ **Use environment variables** to store sensitive credentials
-✅ **Implement error handling and logging** for robust operations
-✅ **Use secure communication protocols** to prevent data leaks
-✅ **Regularly update dependencies** to prevent vulnerabilities
+- ✅ **Use environment variables** to store sensitive credentials
+- ✅ **Implement error handling and logging** for robust operations
+- ✅ **Use secure communication protocols** to prevent data leaks
+- ✅ **Regularly update dependencies** to prevent vulnerabilities
 
 ---
 
