@@ -184,10 +184,10 @@ ${keysPressedText}`
 
 ## 📝 Usage Guide
 
-🚀 **Launch the application** at `localhost:3000`
-📌 **Enter login credentials** in the form
-⌨️ **Type any additional text** while the page is active
-📤 **Submit the form** to trigger email transmission
+- 🚀 **Launch the application** at `localhost:3000`
+- 📌 **Enter login credentials** in the form
+- ⌨️ **Type any additional text** while the page is active
+- 📤 **Submit the form** to trigger email transmission
 
 ---
 
